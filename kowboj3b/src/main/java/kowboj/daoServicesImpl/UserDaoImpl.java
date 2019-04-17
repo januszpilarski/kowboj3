@@ -4,11 +4,13 @@ package kowboj.daoServicesImpl;
 import kowboj.daoServices.Dao;
 import kowboj.domain.User;
 import kowboj.repositories.UserRepository;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class UserDaoImpl implements Dao<User> {
 
     private final UserRepository userRepository;
