@@ -3,10 +3,8 @@ package kowboj.controller;
 
 
 
-import kowboj.daoServices.UserDAO;
 import kowboj.daoServicesImpl.UserDaoImpl;
 import kowboj.domain.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

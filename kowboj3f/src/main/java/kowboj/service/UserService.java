@@ -1,10 +1,10 @@
 package kowboj.service;
 
-import kowboj.daoServices.UserDAO;
+import kowboj.daoServices.UserDao;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
 
-    private UserDAO userDAO;
+    private UserDao userDAO;
 }

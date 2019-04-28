@@ -4,10 +4,11 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user_account")
 public class User {
 
     @Id
+    @Column(unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
@@ -18,7 +19,7 @@ public class User {
     private String password;
     private boolean enabled;
     private boolean tokenExpired;
-    
+
     @ManyToMany
     @JoinTable(
             name = "users_roles",
@@ -27,9 +28,7 @@ public class User {
                     referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
                     name = "role_id",
-                    referencedColumnName = "id")
-    )
-
+                    referencedColumnName = "id"))
     private Collection<Role> roles;
 
 
@@ -57,6 +56,18 @@ public class User {
         return weight;
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public boolean isTokenExpired() {
+        return tokenExpired;
+    }
+
+    public Collection<Role> getRoles() {
+        return roles;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -79,6 +90,18 @@ public class User {
 
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public void setTokenExpired(boolean tokenExpired) {
+        this.tokenExpired = tokenExpired;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
     }
 
     public User(String firstName, String lastName, String email, String password, int weight, boolean enabled, boolean tokenExpired) {
