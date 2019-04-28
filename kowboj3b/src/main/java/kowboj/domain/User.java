@@ -1,7 +1,7 @@
 package kowboj.domain;
 
 import javax.persistence.*;
-import java.io.Serializable;
+import java.util.Collection;
 
 @Entity
 @Table(name = "users")
@@ -13,9 +13,25 @@ public class User {
 
     private String firstName;
     private String lastName;
+    private int weight;
     private String email;
     private String password;
-    private int weight;
+    private boolean enabled;
+    private boolean tokenExpired;
+    
+    @ManyToMany
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(
+                    name = "user_id",
+                    referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id",
+                    referencedColumnName = "id")
+    )
+
+    private Collection<Role> roles;
+
 
     public Long getId() {
         return id;
@@ -65,11 +81,13 @@ public class User {
         this.weight = weight;
     }
 
-    public User(String firstName, String lastName, String email, String password, int weight) {
+    public User(String firstName, String lastName, String email, String password, int weight, boolean enabled, boolean tokenExpired) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.weight = weight;
+        this.enabled = enabled;
+        this.tokenExpired = tokenExpired;
     }
 }
