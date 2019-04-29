@@ -1,6 +1,6 @@
 package kowboj.service;
 
-import kowboj.daoServices.UserDao;
+import kowboj.InterfaceServices.UserDao;
 import org.springframework.stereotype.Service;
 
 @Service

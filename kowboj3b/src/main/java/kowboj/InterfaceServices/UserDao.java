@@ -1,10 +1,9 @@
-package kowboj.daoServices;
+package kowboj.InterfaceServices;
 
 
 import kowboj.domain.User;
 import kowboj.dto.UserDto;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface UserDao {

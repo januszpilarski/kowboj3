@@ -104,13 +104,13 @@ public class User {
         this.roles = roles;
     }
 
-    public User(String firstName, String lastName, String email, String password, int weight, boolean enabled, boolean tokenExpired) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.weight = weight;
-        this.enabled = enabled;
-        this.tokenExpired = tokenExpired;
-    }
+//    public User(String firstName, String lastName, String email, String password, int weight, boolean enabled, boolean tokenExpired) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.email = email;
+//        this.password = password;
+//        this.weight = weight;
+//        this.enabled = enabled;
+//        this.tokenExpired = tokenExpired;
+//    }
 }

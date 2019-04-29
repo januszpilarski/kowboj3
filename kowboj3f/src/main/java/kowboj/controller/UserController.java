@@ -3,7 +3,7 @@ package kowboj.controller;
 
 
 
-import kowboj.daoServicesImpl.UserDaoImpl;
+import kowboj.Services.UserDaoImpl;
 import kowboj.domain.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +24,7 @@ public class UserController {
         this.userDAO = userDAO;
     }
 
-    List<User> getAllUsers(){
-        return userDAO.getAll();
-    }
+//    List<User> getAllUsers(){
+//        return userDAO.getAll();
+//    }
 }

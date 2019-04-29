@@ -1,4 +1,4 @@
-package kowboj.daoServices;
+package kowboj.InterfaceServices;
 
 import kowboj.domain.Privilege;
 
