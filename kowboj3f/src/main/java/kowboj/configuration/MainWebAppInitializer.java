@@ -14,7 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 //@EnableWebMvc
-@Configuration
+//@Configuration
 public class MainWebAppInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(final ServletContext sc) throws ServletException {

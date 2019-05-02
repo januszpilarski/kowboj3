@@ -17,7 +17,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackageClasses= PageController.class)
+@ComponentScan("main/webapp/")
 public class SpringWebConfig implements WebMvcConfigurer {
 
     @Override
@@ -30,15 +30,15 @@ public class SpringWebConfig implements WebMvcConfigurer {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 
         resolver.setViewClass(JstlView.class);
-        resolver.setPrefix("/webapp/WEB-INF/views/jsp/");
+        resolver.setPrefix("main/webapp/WEB-INF/views/jsp/");
         resolver.setSuffix(".jsp");
         return resolver;
     }
 
 
-//    @Override
-//    public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
-//    }
+    @Override
+    public void addResourceHandlers(final ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/").addResourceLocations("/resources/");
+    }
 
 }

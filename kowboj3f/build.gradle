@@ -21,9 +21,9 @@ dependencies {
 
    // compile group: 'org.thymeleaf', name: 'thymeleaf-spring5', version: '3.0.11.RELEASE'
    // compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.17'
-    compile 'javax.servlet:jstl:1.2'
+ //   compile 'javax.servlet:jstl:1.2'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+ //   providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
     compile project(':kowboj3b')
 

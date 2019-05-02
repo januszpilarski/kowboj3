@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,6 +26,11 @@ public class UserDaoImpl implements UserDao {
 
     @Autowired
     private PrivilegeRepository privilegeRepository;
+
+    @Override
+    public List<User> findAll(){
+        return userRepository.findAll();
+    }
 
     @Override
     public User registerNewUserAccount(final UserDto userDto) {
