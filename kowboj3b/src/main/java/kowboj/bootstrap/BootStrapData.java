@@ -28,12 +28,27 @@ public class BootStrapData implements CommandLineRunner {
 
         userRepository.save(u1);
 
-//
-//        User u2 = new User("Basia", "Zalewska", "mailu1@mail.pl", "haslo2", 70, true, false);
-//        userRepository.save(u2);
-//
-//        User u3 = new User("Edward", "Bocian", "dingo5017@gmail.com", "haslo3", 90, true, false);
-//        userRepository.save(u3);
+        User u2 = new User();
+        u2.setFirstName("Basia");
+        u2.setLastName("Zalewska");
+        u2.setEmail("mailu2@mail.pl");
+        u2.setPassword("haslo2");
+        u2.setWeight(60);
+        u2.setEnabled(true);
+        u2.setTokenExpired(false);
+
+        userRepository.save(u2);
+
+        User u3 = new User();
+        u3.setFirstName("Edward");
+        u3.setLastName("Bocian");
+        u3.setEmail("dingo5017@gmail.com");
+        u3.setPassword("haslo3");
+        u3.setWeight(90);
+        u3.setEnabled(true);
+        u3.setTokenExpired(false);
+
+        userRepository.save(u3);
 
         System.out.println("Users:" + userRepository.count());
     }

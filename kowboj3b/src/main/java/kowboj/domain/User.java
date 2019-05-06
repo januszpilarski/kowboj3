@@ -31,6 +31,9 @@ public class User {
                     referencedColumnName = "id"))
     private Collection<Role> roles;
 
+    @OneToMany(mappedBy = "user")
+    private Collection<Training> trainings;
+
 
     public Long getId() {
         return id;
