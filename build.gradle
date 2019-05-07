@@ -3,17 +3,29 @@ version '1.0-SNAPSHOT'
 
 subprojects
         {
-    //        apply plugin: "io.spring.dependency-management"
+            apply plugin: 'application'
             apply plugin: 'java'
             apply plugin: 'eclipse'
             apply plugin: 'idea'
-      //      apply plugin: 'org.springframework.boot'
             apply plugin: 'application'
-            apply plugin: "war"
+            apply plugin: 'war'
+            
+            sourceCompatibility = 11
+            targetCompatibility = 11
+            
+            ext
+                    { 
+                        springData = "2.0.3.RELEASE"
+                        inject = '1'
+                    }
 
+            repositories {
+                mavenCentral()
+            }
 
-                sourceCompatibility = 11
-                targetCompatibility = 11
-
+            dependencies
+                    {
+                        compile "javax.inject:javax.inject:${inject}"
+                    }
 
         }
