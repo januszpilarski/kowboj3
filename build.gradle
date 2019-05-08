@@ -15,7 +15,7 @@ subprojects
             
             ext
                     { 
-                        springData = "2.0.3.RELEASE"
+                        springData = "2.1.4.RELEASE"
                         inject = '1'
                     }
 
@@ -28,4 +28,31 @@ subprojects
                         compile "javax.inject:javax.inject:${inject}"
                     }
 
+            buildscript
+                    {
+                        repositories
+                                {
+                                    mavenCentral()
+                                    maven { url "http://repo.spring.io/milestone" }
+                                }
+
+                        dependencies
+                                {
+                                    classpath "org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE"
+                                }
+                    }
+        }
+
+buildscript
+        {
+            repositories
+                    {
+                        mavenCentral()
+                        maven { url "http://repo.spring.io/milestone" }
+                    }
+
+            dependencies
+                    {
+                        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE"
+                    }
         }
