@@ -2,6 +2,7 @@ package kowboj.domain;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 public class Horse {
@@ -46,5 +47,28 @@ public class Horse {
 
     public void setTrainings(Collection<Training> trainings) {
         this.trainings = trainings;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Horse horse = (Horse) o;
+        return Objects.equals(id, horse.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Horse{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", trainings=" + trainings +
+                '}';
     }
 }

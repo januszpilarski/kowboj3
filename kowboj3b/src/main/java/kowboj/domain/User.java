@@ -2,6 +2,7 @@ package kowboj.domain;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 @Table(name = "user_account")
@@ -107,13 +108,35 @@ public class User {
         this.roles = roles;
     }
 
-//    public User(String firstName, String lastName, String email, String password, int weight, boolean enabled, boolean tokenExpired) {
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.email = email;
-//        this.password = password;
-//        this.weight = weight;
-//        this.enabled = enabled;
-//        this.tokenExpired = tokenExpired;
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        return Objects.equals(id, user.id);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", weight=" + weight +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", enabled=" + enabled +
+                ", tokenExpired=" + tokenExpired +
+                ", roles=" + roles +
+                ", trainings=" + trainings +
+                '}';
+    }
 }

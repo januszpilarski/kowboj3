@@ -3,6 +3,7 @@ package kowboj.domain;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 public class Training {
@@ -65,5 +66,28 @@ public class Training {
 
     public void setHorse(Horse horse) {
         this.horse = horse;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Training training = (Training) o;
+        return Objects.equals(id ,training.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Training{" +
+                "id=" + id +
+                ", dateTraining=" + dateTraining +
+                ", user=" + user +
+                ", horse=" + horse +
+                '}';
     }
 }
