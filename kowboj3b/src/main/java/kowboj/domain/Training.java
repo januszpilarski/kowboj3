@@ -13,12 +13,26 @@ public class Training {
     private Long id;
     private Date dateTraining;
 
-    @ManyToOne()
-    @JoinColumn(name = "user_id")
+    @ManyToOne
+    @JoinTable(
+            name = "users_trainings",
+            joinColumns = @JoinColumn(
+                    name = "training_id",
+                    referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "user_id",
+                    referencedColumnName = "id"))
     private User user;
 
-    @ManyToOne()
-    @JoinColumn(name = "horse_id")
+    @ManyToOne
+    @JoinTable(
+            name = "trainings_horses",
+            joinColumns = @JoinColumn(
+                    name = "training_id",
+                    referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "horse_id",
+                    referencedColumnName = "id"))
     private Horse horse;
 
     public Long getId() {
