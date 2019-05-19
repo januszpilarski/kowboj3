@@ -108,6 +108,14 @@ public class User {
         this.roles = roles;
     }
 
+    public Collection<Training> getTrainings() {
+        return trainings;
+    }
+
+    public void setTrainings(Collection<Training> trainings) {
+        this.trainings = trainings;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
