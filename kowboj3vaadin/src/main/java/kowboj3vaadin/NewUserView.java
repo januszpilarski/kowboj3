@@ -5,8 +5,9 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
-import kowboj.Services.UserDaoImpl;
-import kowboj.domain.User;
+
+import kowboj3b.Services.UserDaoImpl;
+import kowboj3b.domain.User;
 import org.vaadin.crudui.crud.impl.GridCrud;
 import org.vaadin.crudui.layout.impl.VerticalCrudLayout;
 
