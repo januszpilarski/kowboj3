@@ -3,7 +3,7 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.4.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-actuator', version: '2.1.4.RELEASE'
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     compile group: 'com.h2database', name: 'h2', version: '1.4.199'
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.2.Final'

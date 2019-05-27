@@ -1,12 +1,13 @@
 package kowboj3f.controller;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.Map;
 
-@RestController
+@Controller
 public class PageController {
 
     @Value("${application.message:Hello World}")
@@ -17,6 +18,12 @@ public class PageController {
         model.put("time", new Date());
         model.put("message", this.message);
         return "welcome";
+    }
+
+    @GetMapping("/home")
+    public String home() {
+
+        return "home";
     }
 
     @RequestMapping("/foo")

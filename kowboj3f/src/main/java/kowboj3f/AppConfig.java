@@ -17,7 +17,7 @@ public class AppConfig {
 
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 
-        viewResolver.setPrefix("/webapp/WEB-INF/views/jsp/");
+        viewResolver.setPrefix("kowboj3/kowboj3f/src/main/webapp/WEB-INF/views/");
         viewResolver.setSuffix(".jsp");
 
         return viewResolver;
