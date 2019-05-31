@@ -15,9 +15,11 @@ subprojects
             
             ext
                     {
-                        springData = "2.1.4.RELEASE"
+                        springData = '2.1.4.RELEASE'
                         inject = '1'
                         slf4j = '1.7.26'
+                        springSecurity = '5.1.5.RELEASE'
+                        dependencyManagementPlugin = '1.0.7.RELEASE'
                     }
 
             repositories {
@@ -30,19 +32,23 @@ subprojects
                         compile "javax.inject:javax.inject:${inject}"
 //                        compile "org.slf4j:slf4j-api:${slf4j}"
 //                        compile "org.slf4j:slf4j-log4j12:${slf4j}"
+                        compile "org.springframework.security:spring-security-web:${springSecurity}"
+//                        compile "org.springframework.security:spring-security-config:${springSecurity}"
                     }
 
             buildscript
                     {
                         repositories
                                 {
-                                    mavenCentral()
                                     maven { url "http://repo.spring.io/milestone" }
+                                    jcenter()
+                                    mavenCentral()
                                 }
 
                         dependencies
                                 {
                                     classpath "org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE"
+                                    classpath 'io.spring.gradle:dependency-management-plugin:${dependencyManagementPlugin}'
                                 }
                     }
 
@@ -54,12 +60,14 @@ buildscript
         {
             repositories
                     {
-                        mavenCentral()
                         maven { url "http://repo.spring.io/milestone" }
+                        jcenter()
+                        mavenCentral()
                     }
 
             dependencies
                     {
                         classpath "org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE"
+                        classpath 'io.spring.gradle:dependency-management-plugin:${dependencyManagementPlugin}'
                     }
         }
