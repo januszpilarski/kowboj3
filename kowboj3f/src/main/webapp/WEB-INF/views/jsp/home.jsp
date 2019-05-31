@@ -6,6 +6,6 @@
 <body>
 
 <h2> Company Home Page</h2>
-${message}
+
 </body>
 </html>

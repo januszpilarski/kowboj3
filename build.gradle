@@ -9,12 +9,12 @@ subprojects
             apply plugin: 'idea'
             apply plugin: 'application'
             apply plugin: 'war'
-            
+
             sourceCompatibility = 11
             targetCompatibility = 11
             
             ext
-                    { 
+                    {
                         springData = "2.1.4.RELEASE"
                         inject = '1'
                         slf4j = '1.7.26'
@@ -23,6 +23,7 @@ subprojects
             repositories {
                 mavenCentral()
             }
+
 
             dependencies
                     {
@@ -44,6 +45,9 @@ subprojects
                                     classpath "org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE"
                                 }
                     }
+
+
+
         }
 
 buildscript
