@@ -1,14 +1,27 @@
 group 'com.jpl'
 version '1.0-SNAPSHOT'
 
+task hello {
+    doLast {
+        println  "Root project:   ${project.rootProject}"
+        println  "  rootDir:      ${project.rootDir}"
+        println  "  projectDir:   ${project.projectDir}"
+        println  "  project dir:  ${System.getProperty("user.dir")}"
+    }
+}
+
 subprojects
         {
+            apply plugin: 'war'
             apply plugin: 'application'
             apply plugin: 'java'
             apply plugin: 'eclipse'
             apply plugin: 'idea'
             apply plugin: 'application'
-            apply plugin: 'war'
+
+            mainClassName = 'kowboj' + name.capitalize()
+            ext.mainClass = 'kowboj' + name.capitalize()
+
 
             sourceCompatibility = 11
             targetCompatibility = 11
@@ -33,7 +46,7 @@ subprojects
 //                        compile "org.slf4j:slf4j-api:${slf4j}"
 //                        compile "org.slf4j:slf4j-log4j12:${slf4j}"
                         compile "org.springframework.security:spring-security-web:${springSecurity}"
-//                        compile "org.springframework.security:spring-security-config:${springSecurity}"
+                        compile "org.springframework.security:spring-security-config:${springSecurity}"
                     }
 
             buildscript
