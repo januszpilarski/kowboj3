@@ -16,19 +16,19 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages = {"kowboj3b", "kowboj3f"})
 public class AppConfig implements WebMvcConfigurer {
 
-    @Value("${spring.mvc.view.prefix}")
-    String prefix;
-
-    @Value("${spring.mvc.view.suffix}")
-    String suffix;
+//    @Value("${spring.mvc.view.prefix}")
+//    String prefix;
+//
+//    @Value("${spring.mvc.view.suffix}")
+//    String suffix;
 
     @Bean
     public ViewResolver viewResolver() {
 
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 
-        viewResolver.setPrefix(prefix);
-        viewResolver.setSuffix(suffix);
+        viewResolver.setPrefix("resources/static/");
+        viewResolver.setSuffix(".jsp");
 
         return viewResolver;
     }

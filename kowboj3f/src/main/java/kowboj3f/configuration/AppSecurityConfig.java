@@ -14,13 +14,13 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//
-//        User.UserBuilder users = User.withDefaultPasswordEncoder();
-//
-//        auth.inMemoryAuthentication()
-//                .withUser(users.username("jan").password("pas1").roles("EMPLOYEE"))
-//                .withUser(users.username("kim").password("pas2").roles("MANAGER"))
-//                .withUser(users.username("bran").password("pas3").roles("ADMIN"));
+
+        User.UserBuilder users = User.withDefaultPasswordEncoder();
+
+        auth.inMemoryAuthentication()
+                .withUser(users.username("jan").password("pas1").roles("EMPLOYEE"))
+                .withUser(users.username("kim").password("pas2").roles("MANAGER"))
+                .withUser(users.username("bran").password("pas3").roles("ADMIN"));
     }
 
     @Override
