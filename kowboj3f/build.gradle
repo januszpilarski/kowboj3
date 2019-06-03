@@ -2,13 +2,11 @@ dependencies {
 
     compile "org.springframework.boot:spring-boot-starter"
     compile "org.springframework.boot:spring-boot-starter-web"
+    compile 'javax.servlet:jstl:1.2'
     
     compile project(':kowboj3b')
 
  //   testImplementation 'org.springframework.boot:spring-boot-starter-test'
     
 }
-println  "Root project:   ${project.rootProject}"
-println  "  rootDir:      ${project.rootDir}"
-println  "  projectDir:   ${project.projectDir}"
-println  "  project dir:  ${System.getProperty("user.dir")}"
+
