@@ -2,8 +2,10 @@ dependencies {
 
     compile "org.springframework.boot:spring-boot-starter"
     compile "org.springframework.boot:spring-boot-starter-web"
-    compile 'javax.servlet:jstl:1.2'
-    
+    compile "javax.servlet:jstl:1.2"
+    compile "org.springframework.security:spring-security-taglibs:${springSecurity}"
+
+
     compile project(':kowboj3b')
 
  //   testImplementation 'org.springframework.boot:spring-boot-starter-test'
