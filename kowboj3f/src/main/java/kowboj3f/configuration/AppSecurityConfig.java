@@ -33,17 +33,6 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("bran").password("{noop}pas3").roles("MANAGER", "INSTRUCTOR", "RIDER");
     }
 
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//
-//        User.UserBuilder users = User.withDefaultPasswordEncoder();
-//
-//        auth.inMemoryAuthentication()
-//                .withUser(users.username("jan").password("pas1").roles("RIDER"))
-//                .withUser(users.username("kim").password("pas2").roles("EMPLOYEE", "MANAGER"))
-//                .withUser(users.username("bran").password("pas3").roles("EMPLOYEE", "ADMIN"));
-//    }
-
     @Bean
     public AuthenticationSuccessHandler myAuthenticationSuccessHandler(){
         return new UrlAuthenticationSuccessHandler();
@@ -66,7 +55,10 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutSuccessUrl("/")
-                .permitAll();
+                .permitAll()
+                .and()
+                .exceptionHandling()
+                .accessDeniedPage("/access-denied");
     }
 
 

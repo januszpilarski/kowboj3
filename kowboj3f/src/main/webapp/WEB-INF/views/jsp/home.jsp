@@ -18,6 +18,19 @@
                 <br><br>
             Role(s) <security:authentication property="principal.authorities"/>
         </p>
+
+        <hr>
+    <security:authorize access="hasRole('MANAGER')">
+
+        <p>
+
+            <a href="${pageContext.request.contextPath}/manager">
+                Manager Home
+            </a>
+
+        </p>
+
+    </security:authorize>
         <hr>
 
         <!-- logout button -->
