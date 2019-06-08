@@ -10,7 +10,7 @@ import java.util.Date;
 public class RiderController {
 
     @GetMapping("/riders")
-    public String home(ModelMap model) {
+    public String ShowRiderHomePage(ModelMap model) {
         model.put("time", new Date());
         return "home";
     }

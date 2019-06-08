@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.List;
 
 public class UrlAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
@@ -47,24 +48,32 @@ public class UrlAuthenticationSuccessHandler implements AuthenticationSuccessHan
     }
 
     protected String determineTargetUrl(Authentication authentication) {
+
         boolean isRider = false;
-        boolean isAdmin = false;
+        boolean isInstructor = false;
+        boolean isManager = false;
+
         Collection<? extends GrantedAuthority> authorities
                 = authentication.getAuthorities();
         for (GrantedAuthority grantedAuthority : authorities) {
-            if (grantedAuthority.getAuthority().equals("ROLE_RIDER")) {
-                isRider = true;
+            if (grantedAuthority.getAuthority().contains("ROLE_MANAGER")) {
+                isManager = true;
                 break;
-            } else if (grantedAuthority.getAuthority().equals("ROLE_ADMIN")) {
-                isAdmin = true;
+            } else if (grantedAuthority.getAuthority().equals("ROLE_INSTRUCTOR")) {
+                isInstructor = true;
+                break;
+            }else if (grantedAuthority.getAuthority().equals("ROLE_RIDER")) {
+                isRider = true;
                 break;
             }
         }
 
-        if (isRider) {
+        if (isManager) {
+            return "/manager";
+        } else if (isInstructor) {
+            return "/instructor";
+        } else if (isRider) {
             return "/riders";
-        } else if (isAdmin) {
-            return "/console.html";
         } else {
             throw new IllegalStateException();
         }

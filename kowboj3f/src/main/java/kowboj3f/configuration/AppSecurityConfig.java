@@ -24,12 +24,13 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        // @formatter:off
+
         auth.inMemoryAuthentication()
                 .withUser("jan").password("{noop}pas1").roles("RIDER")
                 .and()
-                .withUser("admin1").password("{noop}admin1Pass").roles("ADMIN");
-        // @formatter:on
+                .withUser("kim").password("{noop}pas2").roles("INSTRUCTOR", "RIDER")
+                .and()
+                .withUser("bran").password("{noop}pas3").roles("MANAGER", "INSTRUCTOR", "RIDER");
     }
 
 //    @Override
