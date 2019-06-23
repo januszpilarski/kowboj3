@@ -34,6 +34,7 @@ subprojects
                         slf4j = '1.7.26'
                         springSecurity = '5.1.5.RELEASE'
                         dependencyManagementPlugin = '1.0.7.RELEASE'
+                        hibernate = '5.4.3.Final'
                     }
 
             repositories {
