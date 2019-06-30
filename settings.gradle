@@ -2,4 +2,5 @@ rootProject.name = 'kowboj3'
 include 'kowboj3b'
 include 'kowboj3f'
 include 'kowboj3vaadin'
+include 'calendar'
 

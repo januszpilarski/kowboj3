@@ -1,0 +1,5 @@
+dependencies
+        {
+            compile "com.google.apis:google-api-services-calendar:${googleCalendar}"
+            compile "com.google.api-client:google-api-client:${googleApiClient}"
+        }

@@ -11,6 +11,8 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     database: mysql
     show-sql: true
+  resources:
+    static-locations: /kowboj3f/src/main/webapp/WEB-INF/views/jsp/
 #    properties:
 #      javax:
 #        persistence:
