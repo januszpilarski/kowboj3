@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-@Component
+//@Component
 public class TestJdbc {
 
     String jdbcUrl = "jdbc:mysql://localhost:3306/sfg_prod?useSSL=false&serverTimezone=UTC";
