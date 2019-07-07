@@ -13,7 +13,7 @@ public class Role {
 
     private String name;
 
-    @ManyToMany(mappedBy =  "roles")
+    @ManyToMany(mappedBy =  "roles", fetch=FetchType.EAGER)
     private Collection<User> users;
 
     @ManyToMany

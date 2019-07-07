@@ -13,7 +13,7 @@ public class Training {
     private Long id;
     private Date dateTraining;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_trainings",
             joinColumns = @JoinColumn(

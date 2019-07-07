@@ -20,7 +20,7 @@
         </p>
 
         <hr>
-    <security:authorize access="hasRole('MANAGER')">
+    <security:authorize access="hasRole('ROLE_MANAGER')">
 
         <p>
 

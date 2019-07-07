@@ -21,7 +21,7 @@ public class User {
     private boolean enabled;
     private boolean tokenExpired;
 
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(
@@ -32,8 +32,8 @@ public class User {
                     referencedColumnName = "id"))
     private Collection<Role> roles;
 
-    @OneToMany(mappedBy = "user")
-    private Collection<Training> trainings;
+//    @OneToMany(mappedBy = "user")
+//    private Collection<Training> trainings;
 
 
     public Long getId() {
@@ -108,13 +108,13 @@ public class User {
         this.roles = roles;
     }
 
-    public Collection<Training> getTrainings() {
-        return trainings;
-    }
+//    public Collection<Training> getTrainings() {
+//        return trainings;
+//    }
 
-    public void setTrainings(Collection<Training> trainings) {
-        this.trainings = trainings;
-    }
+//    public void setTrainings(Collection<Training> trainings) {
+//        this.trainings = trainings;
+//    }
 
     @Override
     public boolean equals(Object o) {
@@ -143,8 +143,9 @@ public class User {
                 ", password='" + password + '\'' +
                 ", enabled=" + enabled +
                 ", tokenExpired=" + tokenExpired +
-                ", roles=" + roles +
-                ", trainings=" + trainings +
-                '}';
+              //  ", roles=" + roles +
+             //   ", trainings=" + trainings +
+                '}'
+                ;
     }
 }

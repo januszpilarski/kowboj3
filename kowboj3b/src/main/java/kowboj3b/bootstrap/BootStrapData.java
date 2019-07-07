@@ -76,7 +76,7 @@ public class BootStrapData implements CommandLineRunner {
         u1.setTokenExpired(false);
         u1.setRoles(List.of(role1));
         training1.setUser(u1);
-        u1.setTrainings(List.of(training1));
+   //     u1.setTrainings(List.of(training1));
         userRepository.save(u1);
 
         trainingRepository.save(training1);
