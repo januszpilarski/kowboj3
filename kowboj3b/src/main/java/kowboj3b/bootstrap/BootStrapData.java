@@ -8,8 +8,12 @@ import kowboj3b.repositories.HorseRepository;
 import kowboj3b.repositories.RoleRepository;
 import kowboj3b.repositories.TrainingRepository;
 import kowboj3b.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
@@ -23,12 +27,21 @@ public class BootStrapData implements CommandLineRunner {
     private final RoleRepository roleRepository;
     private final TrainingRepository trainingRepository;
     private final HorseRepository horseRepository;
+//    private PasswordEncoder passwordEncoder;
 
+    @Autowired
     public BootStrapData(UserRepository userRepository, RoleRepository roleRepository, TrainingRepository trainingRepository, HorseRepository horseRepository) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.trainingRepository = trainingRepository;
         this.horseRepository = horseRepository;
+ //       this.passwordEncoder = passwordEncoder;
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+
+        return new BCryptPasswordEncoder();
     }
 
     @Override
@@ -70,7 +83,7 @@ public class BootStrapData implements CommandLineRunner {
         u1.setFirstName("Adam");
         u1.setLastName("Nowak");
         u1.setEmail("mailu1@mail.pl");
-        u1.setPassword("haslo1");
+        u1.setPassword(passwordEncoder().encode("haslo1"));
         u1.setWeight(80);
         u1.setEnabled(true);
         u1.setTokenExpired(false);
@@ -85,7 +98,7 @@ public class BootStrapData implements CommandLineRunner {
         u2.setFirstName("Basia");
         u2.setLastName("Zalewska");
         u2.setEmail("mailu2@mail.pl");
-        u2.setPassword("haslo2");
+        u2.setPassword(passwordEncoder().encode("haslo1"));
         u2.setWeight(60);
         u2.setEnabled(true);
         u2.setTokenExpired(false);
@@ -97,7 +110,7 @@ public class BootStrapData implements CommandLineRunner {
         u3.setFirstName("Edward");
         u3.setLastName("Bocian");
         u3.setEmail("dingo5017@gmail.com");
-        u3.setPassword("haslo3");
+        u3.setPassword(passwordEncoder().encode("haslo1"));
         u3.setWeight(90);
         u3.setEnabled(true);
         u3.setTokenExpired(false);

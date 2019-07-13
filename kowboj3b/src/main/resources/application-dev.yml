@@ -14,10 +14,11 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     database: mysql
     show-sql: true
-#    open-in-view: false
+# The Open Session In View Anti-Pattern
+    open-in-view: false
 
-  resources:
-    static-locations: /kowboj3f/src/main/webapp/WEB-INF/views/jsp/
+#  resources:
+#    static-locations: /kowboj3f/src/main/webapp/WEB-INF/views/jsp/
 
 #
 # Initial schema generation - first startup

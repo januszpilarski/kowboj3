@@ -2,6 +2,7 @@ package kowboj3f;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -23,11 +24,11 @@ import java.util.logging.Logger;
 @PropertySource("classpath:application.properties")
 public class AppConfig implements WebMvcConfigurer {
 
-//    @Value("${spring.mvc.view.prefix}")
-//    String prefix;
-//
-//    @Value("${spring.mvc.view.suffix}")
-//    String suffix;
+    @Value("${spring.mvc.view.prefix}")
+    String prefix;
+
+    @Value("${spring.mvc.view.suffix}")
+    String suffix;
 
     @Autowired
     private Environment env;
@@ -39,8 +40,8 @@ public class AppConfig implements WebMvcConfigurer {
 
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 
-        viewResolver.setPrefix("WEB-INF/views/jsp/");
-        viewResolver.setSuffix(".jsp");
+        viewResolver.setPrefix(prefix);
+        viewResolver.setSuffix(suffix);
 
         return viewResolver;
     }
